@@ -6,20 +6,16 @@ DOWNLOAD_DIRECTORY="/home/$USER/Downloads/Software"
 
 SOFTWARE_TO_INSTALL=(
     virtualbox-qt
-    vim
     wireshark-qt
     siege
-    github-desktop
-    grub-customizer
+    postgresql
+    git
+    gimp
     psensor
     texworks
     gnome-sound-recorder
-    opera-stable
     spotify-client
     cheese
-    sticky
-    staruml
-    logisim-evolution
 )
 
 ## REMOVING APT LOCKS AND UPDATING REPOSITORY ##
@@ -43,16 +39,15 @@ function debs_install()
 
 function apt_install()
 {
+    sudo apt install vim
+
     for software_name in ${SOFTWARE_TO_INSTALL[@]}; do
         if ! dpkg -l | grep -q $software_name; then # ONLY INSTALL IF IT'S NOT ALREADY INSTALLED
-            apt install "$software_name" -y
+            apt-get install "$software_name" -y
         else
             echo "[INSTALLED] - $software_name"
         fi
     done
-
-    # sudo apt-get install nvidia-settings #
-    # sudo apt-get install git #
 }
 
 ## INSTALL FLATPAK PACKAGES ##
@@ -62,9 +57,21 @@ function flatpaks_install()
     flatpak install flathub com.discordapp.Discord -y
     flatpak install flathub com.obsproject.Studio -y
     flatpak install flathub org.eclipse.Java -y
+    flatpak install flathub com.github.reds.LogisimEvolution -y
+    flatpak install flathub com.opera.Opera -y
+    flatpak install flathub io.github.shiftey.Desktop -y
+    flatpak install flathub io.github.mimbrero.WhatsAppDesktop -y
+    flatpak install flathub io.github.jeffshee.Hidamari -y
     
     # flatpak install flathub io.atom.Atom #
     # flatpak install flathub com.visualstudio.code #
+}
+
+## INSTALL GRUB CUSTOMIZER (PPA) ##
+
+function add_grub()
+{
+    sudo add-apt-repository ppa:danielrichter2007/grub-customizer && sudo apt-get update && sudo apt-get install grub-customizer
 }
 
 ## OTHER ## 
@@ -88,4 +95,5 @@ initial_proceedings
 debs_install
 apt_install
 flatpaks_install
+add_grub
 finish
