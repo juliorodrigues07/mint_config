@@ -14,6 +14,7 @@ LIBS_TO_INSTALL=(
     opencv-python
     pycryptodomex
     python-barcode
+    pyzbar
     matplotlib
     networkx
     scipy
