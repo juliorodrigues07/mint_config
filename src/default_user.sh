@@ -16,9 +16,11 @@ LIBS_TO_INSTALL=(
     python-barcode
     pyzbar
     matplotlib
+    seaborn
     networkx
     scipy
     numpy
+    openpyxl
 )
 
 ## PYTHON LIBRARIES  ##
