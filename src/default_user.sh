@@ -11,6 +11,8 @@ URL_JETBRAINS="https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.2.1
 
 LIBS_TO_INSTALL=(
     pandas
+    xgboost
+    statsmodels
     opencv-python
     pycryptodomex
     python-barcode
