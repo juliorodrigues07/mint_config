@@ -22,6 +22,10 @@ LIBS_TO_INSTALL=(
     networkx
     scipy
     numpy
+    mechanize
+    beautifulsoup4
+    lxml
+    requests
     openpyxl
 )
 
