@@ -18,6 +18,17 @@ SOFTWARE_TO_INSTALL=(
     cheese
 )
 
+FLATPAK_TO_INSTALL=(
+    com.discordapp.Discord
+    com.obsproject.Studio
+    org.eclipse.Java
+    com.github.reds.LogisimEvolution
+    com.opera.Opera
+    io.github.shiftey.Desktop
+    io.github.mimbrero.WhatsAppDesktop
+    io.github.jeffshee.Hidamari
+)
+
 ## REMOVING APT LOCKS AND UPDATING REPOSITORY ##
 
 function initial_proceedings()
@@ -54,14 +65,9 @@ function apt_install()
 
 function flatpaks_install()
 {
-    flatpak install flathub com.discordapp.Discord -y
-    flatpak install flathub com.obsproject.Studio -y
-    flatpak install flathub org.eclipse.Java -y
-    flatpak install flathub com.github.reds.LogisimEvolution -y
-    flatpak install flathub com.opera.Opera -y
-    flatpak install flathub io.github.shiftey.Desktop -y
-    flatpak install flathub io.github.mimbrero.WhatsAppDesktop -y
-    flatpak install flathub io.github.jeffshee.Hidamari -y
+    for flatpak_name in ${FLATPAK_TO_INSTALL[@]}; do
+        flatpak install flathub "$flatpak_name" -y
+    done
     
     # flatpak install flathub io.atom.Atom #
     # flatpak install flathub com.visualstudio.code #
