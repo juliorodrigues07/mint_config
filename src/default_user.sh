@@ -24,8 +24,10 @@ LIBS_TO_INSTALL=(
     numpy
     mechanize
     beautifulsoup4
+    selenium
     lxml
     requests
+    random_user_agent
     openpyxl
 )
 
