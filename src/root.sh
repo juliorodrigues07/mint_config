@@ -51,7 +51,10 @@ function debs_install()
 function apt_install()
 {
     sudo apt install vim
+
+    # Proceedings for installing nodejs, npm and parcel #
     curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && apt-get install -y nodejs
+    npm install -g parcel-bundler
 
     for software_name in ${SOFTWARE_TO_INSTALL[@]}; do
         if ! dpkg -l | grep -q $software_name; then # ONLY INSTALL IF IT'S NOT ALREADY INSTALLED
