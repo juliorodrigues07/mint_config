@@ -27,6 +27,7 @@ FLATPAK_TO_INSTALL=(
     io.github.shiftey.Desktop
     io.github.mimbrero.WhatsAppDesktop
     io.github.jeffshee.Hidamari
+    org.localsend.localsend_app
 )
 
 ## REMOVING APT LOCKS AND UPDATING REPOSITORY ##
