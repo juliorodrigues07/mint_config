@@ -29,6 +29,7 @@ LIBS_TO_INSTALL=(
     requests
     random_user_agent
     openpyxl
+    pipenv
 )
 
 ## PYTHON LIBRARIES  ##
