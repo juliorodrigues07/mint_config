@@ -53,8 +53,9 @@ function apt_install()
 {
     sudo apt install vim
 
-    # Proceedings for installing nodejs, npm and parcel #
+    # Proceedings for installing Vue.js, Node.js, npm and parcel #
     curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && apt-get install -y nodejs
+    npm install -g @vue/cli
     npm install -g parcel-bundler
 
     for software_name in ${SOFTWARE_TO_INSTALL[@]}; do
@@ -64,6 +65,17 @@ function apt_install()
             echo "[INSTALLED] - $software_name"
         fi
     done
+
+    # Scope commands for installing eslint, axios and bootstrap for Vue.js based projects
+    # npm install --save-dev eslint eslint-plugin-vue
+    # npm i axios
+    # npm install bootstrap@4.6.0 --save
+    # npm install bootstrap-vue@2.21.2 --save
+
+    # Scope commands for initialization and installing eslint and parcel for raw JavaScript based projects
+    # npm init -y
+    # npx eslint --init
+    # npm install --save-dev parcel
 }
 
 ## INSTALL FLATPAK PACKAGES ##
