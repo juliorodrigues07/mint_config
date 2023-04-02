@@ -16,6 +16,7 @@ SOFTWARE_TO_INSTALL=(
     gnome-sound-recorder
     spotify-client
     cheese
+    freeglut3-dev
 )
 
 FLATPAK_TO_INSTALL=(
